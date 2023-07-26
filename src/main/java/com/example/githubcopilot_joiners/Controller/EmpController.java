@@ -23,13 +23,8 @@ public class EmpController {
    @Autowired
     private EmpServiceImpl empservice;
 
-    @GetMapping("/home")
-    public String homepage() {
 
-        return "welcome to home page";
-    }
-
-    @PostMapping("/addEmp")
+    @PostMapping
     public ResponseEntity<Employee> addEmployees(@RequestBody @Valid Employee employee){
     Employee emp = empservice.addEmployee(employee);
 
@@ -37,14 +32,14 @@ public class EmpController {
 
     }
 
-    @GetMapping("/allEmp")
+    @GetMapping
     public ResponseEntity<List<Employee>> listOfEmployee(){
         List<Employee> allEmployee = empservice.getAllEmployee();
 
         return new ResponseEntity<List<Employee>>(allEmployee, HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/findEmp/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Optional<Employee>> findById(@PathVariable int id){
 
         Optional<Employee> empByID = empservice.FindEmployeeById(id);
@@ -53,31 +48,21 @@ public class EmpController {
 
     }
 
-    @GetMapping("/findallEmp")
-    public ResponseEntity<List<Employee>> findAllEmployee(){
-        List<Employee> allEmployee = empservice.FindAllEmployees();
 
-        return new ResponseEntity<List<Employee>>(allEmployee, HttpStatus.ACCEPTED);
-    }
-
-    @PutMapping("/updateEmp/{id}")
+    @PutMapping
     public ResponseEntity<Employee> updateEmployee(@PathVariable int id,@RequestBody Employee employee){
-
-        employee.setEid(id);
 
         Employee emp = empservice.updateEmployee(employee);
 
         return new ResponseEntity<Employee>(emp, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/removeEmp/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> removeEmployee(@PathVariable int id){
 
         empservice.removeEmployee(id);
         return new ResponseEntity<String>("Remove Employee successfully",HttpStatus.ACCEPTED);
     }
-
-
 
 
 }
