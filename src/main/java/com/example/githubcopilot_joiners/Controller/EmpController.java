@@ -49,7 +49,7 @@ public class EmpController {
     }
 
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable int id,@RequestBody Employee employee){
 
         Employee emp = empservice.updateEmployee(employee);

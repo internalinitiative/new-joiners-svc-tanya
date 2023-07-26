@@ -41,18 +41,13 @@ public class EmpServiceImpl implements Empservice   {
                 throw new ResourceNotFoundException("Record not found with id : " + employee.getEid());
             }
 
-
-
     }
+
+
 
         @Override
         public Employee getEmployeeById(int id) {
             return null;
-        }
-
-        @Override
-        public void deleteEmployeeById(int id) {
-
         }
 
         @Override
@@ -75,12 +70,6 @@ public class EmpServiceImpl implements Empservice   {
            else
                return null;
        }
-
-        @Override
-        public List<Employee> FindAllEmployees() {
-            return null;
-        }
-
         @Override
     public Employee addEmployee(Employee employee) {
             employee = employeeRepo.save(employee);

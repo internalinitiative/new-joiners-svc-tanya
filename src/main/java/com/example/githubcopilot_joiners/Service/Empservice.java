@@ -10,8 +10,6 @@ public interface Empservice {
     public Employee saveEmployee(Employee employee);
     public Employee updateEmployee(Employee employee);
     public Employee getEmployeeById(int id);
-    public void deleteEmployeeById(int id);
-
     List<Employee> getAllEmployee();
 
    public String removeEmployee(int id);
@@ -20,5 +18,4 @@ public interface Empservice {
 
     public Optional<Employee> FindEmployeeById(int id);
 
-    public List<Employee> FindAllEmployees();
 }
