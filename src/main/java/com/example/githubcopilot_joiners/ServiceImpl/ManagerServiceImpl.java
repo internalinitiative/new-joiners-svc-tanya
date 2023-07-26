@@ -47,11 +47,6 @@ public class ManagerServiceImpl implements Managerservice {
     }
 
     @Override
-    public void deletemanagerById(int id) {
-
-    }
-
-    @Override
     public Optional<Manager> FindmanagerById(int id) {
         Optional<Manager> manager = managerRepo.findById(id);
         if(manager.isPresent()){
@@ -62,12 +57,6 @@ public class ManagerServiceImpl implements Managerservice {
             throw new ResourceNotFoundException("Record not found with id : " + id);
         }
     }
-
-    @Override
-    public List<Manager> FindAllmanager() {
-        return managerRepo.findAll();
-    }
-
     @Override
     public List<Manager> getAllmanager() {
         return managerRepo.findAll();
@@ -75,7 +64,8 @@ public class ManagerServiceImpl implements Managerservice {
 
     @Override
     public Manager addmanager(Manager manager) {
-        return managerRepo.save(manager);
+        manager = managerRepo.save(manager);
+        return manager;
     }
 
     @Override
