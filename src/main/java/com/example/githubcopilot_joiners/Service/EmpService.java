@@ -5,17 +5,16 @@ import com.example.githubcopilot_joiners.Model.Employee;
 import java.util.List;
 import java.util.Optional;
 
-public interface Empservice {
+public interface EmpService {
 
-    public Employee saveEmployee(Employee employee);
-    public Employee updateEmployee(Employee employee);
-    public Employee getEmployeeById(int id);
+    Employee saveEmployee(Employee employee);
+    Employee updateEmployee(Employee employee);
+    Employee getEmployeeById(int id);
     List<Employee> getAllEmployee();
+    String removeEmployee(int id);
 
-   public String removeEmployee(int id);
+    Object addEmployee(Employee employee);
 
-    public Object addEmployee(Employee employee);
-
-    public Optional<Employee> FindEmployeeById(int id);
+    Optional<Employee> findEmployeeById(int id);
 
 }
