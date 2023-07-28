@@ -2,18 +2,16 @@ package com.example.githubcopilot_joiners.ServiceImpl;
 
 import com.example.githubcopilot_joiners.Model.Employee;
 import com.example.githubcopilot_joiners.Repository.EmployeeRepo;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.example.githubcopilot_joiners.Service.Empservice;
+import com.example.githubcopilot_joiners.Service.EmpService;
 import com.example.githubcopilot_joiners.Exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 
 
 import java.util.List;
 import java.util.Optional;
 @Service
-public class EmpServiceImpl implements Empservice   {
+public class EmpServiceImpl implements EmpService {
 
     @Autowired
     private EmployeeRepo employeeRepo;
@@ -34,7 +32,7 @@ public class EmpServiceImpl implements Empservice   {
             empUpdt.setEsalary(employee.getEsalary());
             empUpdt.setEphonr(employee.getEphonr());
             empUpdt.setEaddress(employee.getEaddress());
-            return empUpdt;
+            return employeeRepo.save(empUpdt);
         }
             else
             {
@@ -63,7 +61,7 @@ public class EmpServiceImpl implements Empservice   {
     }
 
        @Override
-    public Optional<Employee> FindEmployeeById(int id) {
+    public Optional<Employee> findEmployeeById(int id) {
            Optional<Employee> emp = employeeRepo.findById(id);
            if (emp.isPresent())
                return emp;
