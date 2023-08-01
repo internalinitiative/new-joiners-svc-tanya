@@ -15,11 +15,20 @@ import java.util.Optional;
 
 
 @RestController
+@CrossOrigin(origins = "http://3.93.13.154:8080")
 @RequestMapping("/employee")
 public class EmpController {
 
-   @Autowired
     private EmpServiceImpl empService;
+    @Autowired
+    public EmpController(EmpServiceImpl empService) {
+        this.empService = empService;
+    }
+
+    @GetMapping("/test")
+    public String test(){
+        return "Test";
+    }
 
 
     @PostMapping
