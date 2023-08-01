@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>GithubCopilot_Joiners</artifactId>
+	<artifactId>new-joiners-svc-tanya</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>GithubCopilot_Joiners</name>
+	<name>new-joiners-svc-tanya</name>
 	<description>GithubCopilot_Joiners</description>
 	<properties>
 		<java.version>20</java.version>
