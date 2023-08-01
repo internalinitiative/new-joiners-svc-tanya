@@ -19,19 +19,19 @@ import jakarta.persistence.Id;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer eid;
+    private Integer id;
     @NotBlank(message = "Please enter name")
-    private String ename;
+    private String name;
     @Email(message = "Please enter valid email", regexp="^[a-zA-Z0-9_! #$%&'*+/=?`{|}~^. -]+@[a-zA-Z0-9. -]+$")
     @NotBlank(message = "Please enter email")
-    private String eemail;
+    private String email;
     @NotBlank(message = "Please enter address")
-    private String eaddress;
+    private String address;
     @NotBlank(message = "Please enter phone number")
     @Digits(integer = 10, fraction = 0, message = "Please enter valid phone number")
-    private String ephonr;
+    private String contactnumber;
     @NotNull(message = "Please enter salary")
     @Digits(integer = 10, fraction = 0, message = "Please enter valid salary")
-    private String esalary;
+    private String salary;
 
 }

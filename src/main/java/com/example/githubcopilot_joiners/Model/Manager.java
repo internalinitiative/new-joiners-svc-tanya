@@ -17,18 +17,17 @@ import lombok.*;
 public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer mid;
+    private Integer id;
     @NotBlank(message = "Please enter name")
-    private String mname;
+    private String name;
     @NotBlank(message = "Please enter email")
     @Email(message = "Please enter valid email", regexp="^[a-zA-Z0-9_! #$%&'*+/=?`{|}~^. -]+@[a-zA-Z0-9. -]+$")
-    private String memail;
+    private String email;
     @NotBlank(message = "Please enter address")
-    private String maddress;
+    private String department;
     @NotBlank(message = "Please enter phone number")
     @Digits(integer = 10, fraction = 0, message = "Please enter valid phone number")
-    private String mphonr;
-    @Digits(integer = 10, fraction = 0, message = "Please enter valid salary")
-    private int msalary;
+    private String contactnumber;
+
 
 }
