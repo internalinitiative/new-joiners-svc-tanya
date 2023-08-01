@@ -24,20 +24,19 @@ public class EmpServiceImpl implements EmpService {
 
     @Override
     public Employee updateEmployee(Employee employee) {
-        Optional<Employee> empdb = this.employeeRepo.findById(employee.getEid());
+        Optional<Employee> empdb = this.employeeRepo.findById(employee.getId());
         if(empdb.isPresent()){
             Employee empUpdt = empdb.get();
-            empUpdt.setEid(employee.getEid());
-            empUpdt.setEemail(employee.getEemail());
-            empUpdt.setEname(employee.getEname());
-            empUpdt.setEsalary(employee.getEsalary());
-            empUpdt.setEphonr(employee.getEphonr());
-            empUpdt.setEaddress(employee.getEaddress());
+            empUpdt.setId(employee.getId());
+            empUpdt.setEmail(employee.getEmail());
+            empUpdt.setName(employee.getName());
+            empUpdt.setSalary(employee.getSalary());
+            empUpdt.setContactnumber(employee.getContactnumber());
             return employeeRepo.save(empUpdt);
         }
             else
             {
-                throw new ResourceNotFoundException("Record not found with id : " + employee.getEid());
+                throw new ResourceNotFoundException("Record not found with id : " + employee.getId());
             }
 
     }

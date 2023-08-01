@@ -24,20 +24,19 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Override
     public Manager updateManager(Manager manager) {
-        Optional<Manager> empdb = this.managerRepo.findById(manager.getMid());
+        Optional<Manager> empdb = this.managerRepo.findById(manager.getId());
         if(empdb.isPresent()){
             Manager empUpdt = empdb.get();
-            empUpdt.setMid(manager.getMid());
-            empUpdt.setMemail(manager.getMemail());
-            empUpdt.setMname(manager.getMname());
-            empUpdt.setMsalary(manager.getMsalary());
-            empUpdt.setMphonr(manager.getMphonr());
-            empUpdt.setMaddress(manager.getMaddress());
+            empUpdt.setId(manager.getId());
+            empUpdt.setEmail(manager.getEmail());
+            empUpdt.setName(manager.getName());
+            empUpdt.setContactnumber(manager.getContactnumber());
+            empUpdt.setDepartment(manager.getDepartment());
             return empUpdt;
         }
         else
         {
-            throw new ResourceNotFoundException("Record not found with id : " + manager.getMid());
+            throw new ResourceNotFoundException("Record not found with id : " + manager.getId());
         }
     }
 

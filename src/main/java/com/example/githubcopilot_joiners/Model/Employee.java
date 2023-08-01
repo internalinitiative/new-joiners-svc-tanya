@@ -25,9 +25,6 @@ public class Employee {
     @Email(message = "Please enter valid email", regexp="^[a-zA-Z0-9_! #$%&'*+/=?`{|}~^. -]+@[a-zA-Z0-9. -]+$")
     @NotBlank(message = "Please enter email")
     private String email;
-    @NotBlank(message = "Please enter address")
-    private String address;
-    @NotBlank(message = "Please enter phone number")
     @Digits(integer = 10, fraction = 0, message = "Please enter valid phone number")
     private String contactnumber;
     @NotNull(message = "Please enter salary")
