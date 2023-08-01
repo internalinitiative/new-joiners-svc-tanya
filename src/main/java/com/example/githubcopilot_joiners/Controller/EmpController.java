@@ -15,7 +15,7 @@ import java.util.Optional;
 
 
 @RestController
-@CrossOrigin(origins = "http://3.93.13.154:8080")
+@CrossOrigin(origins = "*")
 @RequestMapping("/employee")
 public class EmpController {
 
