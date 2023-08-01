@@ -27,7 +27,7 @@ public class Manager {
     private String department;
     @NotBlank(message = "Please enter phone number")
     @Digits(integer = 10, fraction = 0, message = "Please enter valid phone number")
-    private String contactnumber;
+    private Integer contactnumber;
 
 
 }

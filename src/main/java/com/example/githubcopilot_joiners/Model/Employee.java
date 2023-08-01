@@ -26,9 +26,9 @@ public class Employee {
     @NotBlank(message = "Please enter email")
     private String email;
     @Digits(integer = 10, fraction = 0, message = "Please enter valid phone number")
-    private String contactnumber;
+    private Integer contactnumber;
     @NotNull(message = "Please enter salary")
     @Digits(integer = 10, fraction = 0, message = "Please enter valid salary")
-    private String salary;
+    private Integer salary;
 
 }
